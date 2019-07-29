@@ -1,0 +1,1235 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <title>Buyle</title>
+
+    <link rel="stylesheet" href="http://182.92.194.216:2202/GodStatic/css/style.css" />
+    <link rel="stylesheet" href="http://182.92.194.216:2202/GodStatic/css/myPlugin.css">
+    <link rel="stylesheet" href="http://182.92.194.216:2202/GodStatic/css/slider.css"/>
+
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <script type="text/javascript" src="layui/layui.all.js"></script>
+</head>
+
+<body>
+<header>
+    <div>
+        <div id="top">
+            <div id="top_rt" class="rt">
+						<span>
+						<a href="">登录</a><b>|</b>
+						<a href="">注册</a><b>|</b>
+						</span>
+                <span class="myself">
+							<a href="" style="color: #EC6514">Leo</a>
+							<a href="">个人中心</a>
+						</span>
+                <a href="">消息通知</a>
+                <p class="rt">
+                    <b></b>
+                    <a href="">购物车</a>
+                    <i>(0)</i>
+                </p>
+                <div ></div>
+            </div>
+            <ul id="top_lt">
+                <li><a href="">小米商城</a><b>|</b></li>
+                <li><a href="">MIUI</a><b>|</b></li>
+                <li><a href="">米聊</a><b>|</b></li>
+                <li><a href="">游戏</a><b>|</b></li>
+                <li><a href="">多看阅读</a><b>|</b></li>
+                <li><a href="">云服务</a><b>|</b></li>
+                <li><a href="">金融</a><b>|</b></li>
+                <li><a href="">小米网移动版</a><b>|</b></li>
+                <li><a href="">问题反馈</a><b>|</b></li>
+                <li><a href="">Select&nbsp;Region</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<nav>
+    <div id="nav">
+        <!---搜索框--->
+        <div id="search" class="rt">
+            <input type="" placeholder="　Aj湖人刮刮乐"/>
+
+            <button>搜索</button>
+            <!----搜索框下拉菜单--->
+
+        </div>
+
+        <!----logo---->
+        <div class="lt">
+            <img src="http://182.92.194.216:2202/GodStatic/images/logo.png"/>
+        </div>
+        <!-------js两个手机的动画------->
+        <p>
+            <img src="http://182.92.194.216:2202/GodStatic/images/nav_phone1.png"/>
+            <img src="http://182.92.194.216:2202/GodStatic/images/nav_phone2.png"/>
+        </p>
+        <!-----nav--->
+        <ul>
+            <li><a href="">小米手机</a></li>
+            <li><a href="">红米</a></li>
+            <li><a href="">平板</a></li>
+            <li><a href="">笔记本</a></li>
+            <li><a href="">电视</a></li>
+            <li><a href="">盒子</a></li>
+            <li><a href="">影音</a></li>
+            <li><a href="">路由器</a></li>
+            <li><a href="">智能硬件</a></li>
+            <li><a href="">服务</a></li>
+            <li><a href="">社区</a></li>
+        </ul>
+    </div>
+    <!----------做nav的弹出框---------------->
+    <div id="nav_product">
+        <ul>
+
+        </ul>
+    </div>
+</nav>
+<!----------------banner------------------>
+<div id="banner">
+    <!--------右边主图------------>
+    <div class="sliders">
+
+        <div class="layui-carousel" id="test10">
+            <div carousel-item="">
+                <div><a href="#"><img src="http://182.92.194.216:2202/GodStatic/images/banner_01.gif"></a> </div>
+                <div><a href="#"><img src="http://182.92.194.216:2202/GodStatic/images/banner_2.gif"></a></div>
+                <div><a href="#"><img src="http://182.92.194.216:2202/GodStatic/images/banner_3.gif"></a></div>
+                <div><a href="#"><img src="http://182.92.194.216:2202/GodStatic/images/banner_4.gif"></a></div>
+                <div><a href="#"><img src="http://182.92.194.216:2202/GodStatic/images/banner_5.gif"></a></div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <!-------左边菜单----------->
+    <div id="category">
+        <ul id="pj">
+
+        </ul>
+    </div>
+    <!---导航菜单弹出框---->
+
+    <!--------banner底部img--------->
+    <div id="banner_btm">
+        <ul class="lt">
+            <li><a href=""><i></i>选购手机</a></li>
+            <li><a href=""><i></i>企业团购</a></li>
+            <li><a href=""><i></i>官翻产品</a></li>
+            <li><a href=""><i></i>小米移动</a></li>
+            <li><a href=""><i></i>以旧换新</a></li>
+            <li><a href=""><i></i>话费充值</a></li>
+        </ul>
+
+        <a href="" class="lt">
+            <img src="http://182.92.194.216:2202/GodStatic/images/banner_btm1.gif"/>
+        </a>
+        <a href="" class="lt">
+            <img src="http://182.92.194.216:2202/GodStatic/images/banner_btm2.gif"/>
+        </a>
+        <a href="" class="rt">
+            <img src="http://182.92.194.216:2202/GodStatic/images/banner_btm3.gif"/>
+        </a>
+
+    </div>
+</div>
+<!------------主体--------------->
+<section>
+    <!--------//一小米明星---------->
+    <div id="star">
+        <div>
+
+            <h2 class="l">小米明星单品</h2>
+        </div>
+        <div class="star_dl">
+            <dl class="s1">
+                <dt>
+                    <a href=""><img src="http://182.92.194.216:2202/GodStatic/images/star_01.gif"/></a>
+                </dt>
+                <dd>
+                    <h4><a href="">小米电视3s
+                        48英寸</a></h4>
+                    <p>原装液晶屏&nbsp;金属机身</p>
+                </dd>
+                <dd class="Ltc">1999元</dd>
+            </dl>
+            <dl class="s2">
+                <dt>
+                    <a href=""><img src="http://182.92.194.216:2202/GodStatic/images/star_02.gif"/></a>
+                </dt>
+                <dd>
+                    <h4><a href="">小米电视3s
+                        48英寸</a></h4>
+                    <p>原装液晶屏&nbsp;金属机身</p>
+                </dd>
+                <dd class="Ltc">1999元</dd>
+            </dl>
+            <dl class="s3">
+                <dt>
+                    <a href=""><img src="http://182.92.194.216:2202/GodStatic/images/star_03.gif"/></a>
+                </dt>
+                <dd>
+                    <h4><a href="">小米电视3s
+                        48英寸</a></h4>
+                    <p>原装液晶屏&nbsp;金属机身</p>
+                </dd>
+                <dd class="Ltc">1999元</dd>
+            </dl>
+            <dl class="s4">
+                <dt>
+                    <a href=""><img src="http://182.92.194.216:2202/GodStatic/images/star_04.gif"/></a>
+                </dt>
+                <dd>
+                    <h4><a href="">小米电视3s
+                        48英寸</a></h4>
+                    <p>原装液晶屏&nbsp;金属机身</p>
+                </dd>
+                <dd class="Ltc">1999元</dd>
+            </dl>
+            <dl class="s5">
+                <dt>
+                    <a href=""><img src="http://182.92.194.216:2202/GodStatic/images/star_05.gif"/></a>
+                </dt>
+                <dd>
+                    <h4><a href="">小米电视3s
+                        48英寸</a></h4>
+                    <p>原装液晶屏&nbsp;金属机身</p>
+                </dd>
+                <dd class="Ltc">1999元</dd>
+            </dl>
+            <!-------------小米明星产品 6-10--------------->
+        </div>
+    </div>
+    <!-------//二-智能硬件--------->
+    <div id="product_hardware">
+        <a class="rt" href="">查看全部<b>&gt;</b></a>
+        <h2>智能硬件</h2>
+        <a class="prHe" href=""><img src="http://182.92.194.216:2202/GodStatic/images/product_hardware_01.jpg"></a>
+        <ul id="hardware">
+            <li>
+                <div>免邮费</div>
+                <a href=""><img src="http://182.92.194.216:2202/GodStatic/images/product_hardware_02.jpg"></a>
+                <h4><a href="">小米路由器3</a></h4>
+                <p>四线设计，更安全更稳定</p>
+                <span>&yen;149元</span>
+            </li>
+            <li>
+                <div>免邮费</div>
+                <a href=""><img src="http://182.92.194.216:2202/GodStatic/images/product_hardware_03.jpg"></a>
+                <h4><a href="">电助力折叠自行车</a></h4>
+                <p>力矩传感电助力，折叠便携设计</p>
+                <span>&yen;2999元</span>
+            </li>
+            <li>
+                <div>免邮费</div>
+                <a href=""><img src="http://182.92.194.216:2202/GodStatic/images/product_hardware_04.jpg"></a>
+                <h4><a href="">小米VR眼睛玩具版</a></h4>
+                <p>观看新体验，期待总于意料之外</p>
+                <span>&yen;49元</span>
+            </li>
+
+            <li class="no_banner">
+                <a href=""><img src="http://182.92.194.216:2202/GodStatic/images/product_hardware_05.jpg"></a>
+                <h4><a href="">九号平衡车</a></h4>
+                <p>年轻人的酷玩具，骑行遥控两种玩法</p>
+                <span>&yen;1999元</span>
+            </li>
+            <li>
+                <div>新品</div>
+                <a href=""><img src="http://182.92.194.216:2202/GodStatic/images/product_hardware_06.jpg"></a>
+                <h4><a href="">米兔智能故事机</a></h4>
+                <p>宝又不好好吃饭，让米兔来哄宝宝吧</p>
+                <span>&yen;199元</span>
+            </li>
+            <li>
+                <div>免邮费</div>
+                <a href=""><img src="http://182.92.194.216:2202/GodStatic/images/product_hardware_07.jpg"></a>
+                <h4><a href="">米家压力IH电饭煲</a></h4>
+                <p>IH电磁环绕加热，让米粒在锅中跳舞</p>
+                <span>&yen;999元</span>
+            </li>
+            <li>
+                <div>新品</div>
+                <a href=""><img src="http://182.92.194.216:2202/GodStatic/images/product_hardware_08.jpg"></a>
+                <h4><a href="">小米笔记本Air12.5英寸</a></h4>
+                <p>更轻更薄，想杂志一样随身携带</p>
+                <span>&yen;3499元</span>
+            </li>
+            <li>
+                <div>新品</div>
+                <a href=""><img src="http://182.92.194.216:2202/GodStatic/images/product_hardware_09.jpg"></a>
+                <h4><a href="">米家&nbsp;LED&nbsp;智能台灯</a></h4>
+                <p>无可视频闪，亮度色温无级调节</p>
+                <span>&yen;169元</span>
+            </li>
+        </ul>
+    </div>
+
+    <!--------//六--为你推荐------------->
+    <div id="recommended">
+        <div class="top">
+            <b class="rt"></b>
+            <h2 class="lt">为你推荐</h2>
+        </div>
+        <ul class="rt_li">
+
+            <li style="margin-left:0;">
+                <a href=""><img src="http://182.92.194.216:2202/GodStatic/images/recommended_01.gif"></a>
+                <h4><a href="">小米移动电源10000mAH</a></h4>
+                <span>&yen;79元</span>
+                <p>19.6万人评价</p>
+            </li>
+            <li>
+                <a href=""><img src="http://182.92.194.216:2202/GodStatic/images/recommended_02.gif"></a>
+                <h4><a href="">小米圈铁耳机</a></h4>
+                <span>&yen;99元</span>
+                <p>1.7万人评价</p>
+            </li>
+            <li>
+                <a href=""><img src="http://182.92.194.216:2202/GodStatic/images/recommended_03.gif"></a>
+                <h4><a href="">小米移动电源10000mAH
+                    高配版</a></h4>
+                <span>&yen;149元</span>
+                <p>2.3万人评价</p>
+            </li>
+            <li>
+                <a href=""><img src="http://182.92.194.216:2202/GodStatic/images/recommended_04.gif"></a>
+                <h4><a href="">小米蓝牙耳机</a></h4>
+                <span>&yen;69元<s>70元</s></span>
+                <p>19.6万人评价</p>
+            </li>
+            <li style="margin-left:11px;">
+                <a href=""><img src="http://182.92.194.216:2202/GodStatic/images/recommended_05.gif"></a>
+                <h4><a href="">小米插线板</a></h4>
+                <span>&yen;49元</span>
+                <p>25.2万人评价</p>
+            </li>
+        </ul>
+    </div>
+
+
+</section>
+<div id="movies">
+    <a class="rt">
+        产看全部<b>></b>
+    </a>
+    <h2 class="lt">视频</h2>
+    <ul>
+        <li>
+            <a href="#"><img src="http://182.92.194.216:2202/GodStatic/images/mov_01.gif"></a>
+            <p>
+                <a href="#">小米5s“暗夜之眼”中的《香港纪实》</a>
+            </p>
+            <span>更锐利、细腻的创作利器</span>
+        </li>
+        <li>
+            <a href="#"><img src="http://182.92.194.216:2202/GodStatic/images/mov_02.gif"></a>
+            <p>
+                <a href="#">红米年度品牌视频</a>
+            </p>
+            <span>一亿人喜爱你，是一种责任。</span>
+        </li>
+        <li>
+            <a href="#"><img src="http://182.92.194.216:2202/GodStatic/images/mov_03.gif"></a>
+            <p>
+                <a href="#">小米笔记本Air可靠性测试视频</a>
+            </p>
+            <span>小米笔记本Air是如何炼成的？</span>
+        </li>
+        <li>
+            <a href="#"><img src="http://182.92.194.216:2202/GodStatic/images/move_04.jpg"></a>
+            <p>
+                <a href="#">小米Max 绝美外观视频</a>
+            </p>
+            <span>6.44" 大屏黄金尺寸，看什么都震撼</span>
+        </li>
+    </ul>
+</div>
+<footer id="Customer">
+    <ul class="">
+        <li>
+            <a href=""><span></span>预约维修服务</a>
+        </li>
+        <span>丨</span>
+        <li>
+            <a href=""><span></span>7天无理由退货</a>
+        </li>
+        <span>丨</span>
+        <li>
+            <a href=""><span></span>15天免费换货</a>
+        </li>
+        <span>丨</span>
+        <li>
+            <a href=""><span></span>满150元包邮</a>
+        </li>
+        <span>丨</span>
+        <li>
+            <a href=""><span></span>520余家售后网点</a>
+        </li>
+    </ul>
+    <div id="hps">
+        <div class="rt">
+            <div>400-100-5678</div>
+            <p>周一至周日 8:00-18:00</p>
+            <p>（仅收市话费）</p>
+            <a href="#" class="hv">
+                <img src="http://182.92.194.216:2202/GodStatic/images/24h_03.jpg">
+            </a>
+        </div>
+        <ul class="help">
+            <li>
+                <h4>帮助中心</h4>
+                <a href="">账户管理</a>
+                <a href="">购物指南</a>
+                <a href="">订单操作</a>
+            </li>
+            <li>
+                <h4>服务支持</h4>
+                <a href="">售后政策</a>
+                <a href="">自助服务</a>
+                <a href="">相关下载</a>
+            </li>
+            <li>
+                <h4>线下门店</h4>
+                <a href="">小米之家</a>
+                <a href="">服务网点</a>
+                <a href="">零售网点</a>
+            </li>
+            <li>
+                <h4>关于小米</h4>
+                <a href="">了解买来乐</a>
+                <a href="">加入买来乐</a>
+                <a href="">联系我们</a>
+            </li>
+            <li>
+                <h4>关注我们</h4>
+                <a href="">新浪微博</a>
+                <a href="">乐部落</a>
+                <a href="">官方微信</a>
+            </li>
+            <li>
+                <h4>特色服务</h4>
+                <a href="">F码通道</a>
+                <a href="">乐移动</a>
+                <a href="">防伪查询</a>
+            </li>
+        </ul>
+    </div>
+</footer>
+<footer id="ft">
+    <div id="footer">
+        <div class="rt">
+            <a href="#"><img src="http://182.92.194.216:2202/GodStatic/images/v-logo-4.gif"></a>
+            <a href="#"><img src="http://182.92.194.216:2202/GodStatic/images/v-logo-1.png"></a>
+            <a href="#"><img src="http://182.92.194.216:2202/GodStatic/images/v-logo-2.png"></a>
+            <a href="#"><img src="http://182.92.194.216:2202/GodStatic/images/v-logo-3.png"></a>
+        </div>
+
+        <div class="lt">
+            <a href="#">买来乐商城</a>丨
+            <a href="#">MIUI</a>丨
+            <a href="#">乐聊</a>丨
+            <a href="#">多看书城</a>丨
+            <a href="#">买来乐路由器</a>丨
+            <a href="#">视频电话</a>丨
+            <a href="#">买来乐后院</a>丨
+            <a href="#">买来乐天猫店</a>丨
+            <a href="#">买来乐淘宝直营店</a>丨
+            <a href="#">买来乐网盟</a>丨
+            <a href="#">问题反馈</a>丨
+            <a href="#">Select Region</a>
+            <p>
+                &copy;<a href="#">mi.com</a>京ICP证110507号
+                <a href="#"> 京ICP备10046444号 </a>
+                <a href="#"> 京公网安备11010802020134号</a>
+                <a href="#">京网文[2014]0059-0009号</a>
+            </p>
+            违法和不良信息举报电话：185-0130-1238，本网站所列数据，除特殊说明，所有数据均出自我司实验室测试
+        </div>
+    </div>
+    <!--<div class="btm"> </div>-->
+</footer>
+<script src="http://182.92.194.216:2202/GodStatic/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+
+    //加载事件
+    $(function () {
+
+        $.post("product_cate/all/0",{"id":0},function (data) {
+
+            var json=eval("("+data+")");//将数据转成json格式
+
+            $.each(json,function(i,d){
+
+                var li = "<li><a href=''>"+d.mpc_name+"</a><b></b>";
+                var div = "<div class='cate_right'>";
+
+                var second =  d.childList;
+                var dl="";
+                $.each(second,function(i,d){
+
+
+                    var s = "<dl> <dt><h1>"+d.mpc_name+"</h1></dt> <dd><a href=''></a></dd> </dl>";
+
+                    dl = dl+s;
+
+                });
+
+                var end = li+div+dl+"</div></li>";
+
+                $("#pj").append(end);
+
+            });
+
+        },"html")
+
+
+    });
+
+
+
+
+    $("#top_rt p").hover(function () {
+
+
+            $("#top_rt p").css({"background":"white"});
+            $("#top_rt p a").css({"color":"#FF6709"});
+            $("#top_rt p i").css({"color":"#FF6709"});
+        },function () {
+
+            $("#top_rt p").css({"background":"#424242"});
+            $("#top_rt p a").css({"color":"#B0A5A5"});
+            $("#top_rt p i").css({"color":"#B0A5A5"});
+        }
+    )
+
+
+    // $("#category>ul li").hover(
+    //
+    //     function () {
+    //         $(this).find(".cate_right").css({"display":"inline-block"});
+    //
+    //      }
+    //    ,function () {
+    //
+    //         $(this).find(".cate_right").css({"display":"none"});
+    //
+    //
+    //      }
+    // )
+
+    $(document).on("mouseover",'#category>ul li',function () {
+        $(this).find(".cate_right").css({"display":"inline-block"});
+    });
+    $(document).on("mouseout",'#category>ul li',function () {
+        $(this).find(".cate_right").css({"display":"none"});
+    });
+
+
+</script>
+
+<script>
+
+    layui.use(['carousel', 'form'], function(){
+        var carousel = layui.carousel
+            ,form = layui.form;
+
+        //常规轮播
+        carousel.render({
+            elem: '#test1'
+            ,arrow: 'always'
+        });
+
+        //改变下时间间隔、动画类型、高度
+        carousel.render({
+            elem: '#test2'
+            ,interval: 1800
+            ,anim: 'fade'
+            ,height: '120px'
+        });
+
+        //设定各种参数
+        var ins3 = carousel.render({
+            elem: '#test3'
+        });
+        //图片轮播
+        carousel.render({
+            elem: '#test10'
+            ,width: '1224px'
+            ,height: '440px'
+            ,interval: 5000
+        });
+
+        //事件
+        carousel.on('change(test4)', function(res){
+            console.log(res)
+        });
+
+        var $ = layui.$, active = {
+            set: function(othis){
+                var THIS = 'layui-bg-normal'
+                    ,key = othis.data('key')
+                    ,options = {};
+
+                othis.css('background-color', '#5FB878').siblings().removeAttr('style');
+                options[key] = othis.data('value');
+                ins3.reload(options);
+            }
+        };
+
+        //监听开关
+        form.on('switch(autoplay)', function(){
+            ins3.reload({
+                autoplay: this.checked
+            });
+        });
+
+        $('.demoSet').on('keyup', function(){
+            var value = this.value
+                ,options = {};
+            if(!/^\d+$/.test(value)) return;
+
+            options[this.name] = value;
+            ins3.reload(options);
+        });
+
+        //其它示例
+        $('.demoTest .layui-btn').on('click', function(){
+            var othis = $(this), type = othis.data('type');
+            active[type] ? active[type].call(this, othis) : '';
+        });
+    });
+</script>
+
+</body>
+</html><!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <title>Buyle</title>
+
+    <link rel="stylesheet" href="http://182.92.194.216:2202/GodStatic/css/style.css" />
+    <link rel="stylesheet" href="http://182.92.194.216:2202/GodStatic/css/myPlugin.css">
+    <link rel="stylesheet" href="http://182.92.194.216:2202/GodStatic/css/slider.css"/>
+
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <script type="text/javascript" src="layui/layui.all.js"></script>
+</head>
+
+<body>
+<header>
+    <div>
+        <div id="top">
+            <div id="top_rt" class="rt">
+						<span>
+						<a href="">登录</a><b>|</b>
+						<a href="">注册</a><b>|</b>
+						</span>
+                <span class="myself">
+							<a href="" style="color: #EC6514">Leo</a>
+							<a href="">个人中心</a>
+						</span>
+                <a href="">消息通知</a>
+                <p class="rt">
+                    <b></b>
+                    <a href="">购物车</a>
+                    <i>(0)</i>
+                </p>
+                <div ></div>
+            </div>
+            <ul id="top_lt">
+                <li><a href="">小米商城</a><b>|</b></li>
+                <li><a href="">MIUI</a><b>|</b></li>
+                <li><a href="">米聊</a><b>|</b></li>
+                <li><a href="">游戏</a><b>|</b></li>
+                <li><a href="">多看阅读</a><b>|</b></li>
+                <li><a href="">云服务</a><b>|</b></li>
+                <li><a href="">金融</a><b>|</b></li>
+                <li><a href="">小米网移动版</a><b>|</b></li>
+                <li><a href="">问题反馈</a><b>|</b></li>
+                <li><a href="">Select&nbsp;Region</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<nav>
+    <div id="nav">
+        <!---搜索框--->
+        <div id="search" class="rt">
+            <input type="" placeholder="　Aj湖人刮刮乐"/>
+
+            <button>搜索</button>
+            <!----搜索框下拉菜单--->
+
+        </div>
+
+        <!----logo---->
+        <div class="lt">
+            <img src="http://182.92.194.216:2202/GodStatic/images/logo.png"/>
+        </div>
+        <!-------js两个手机的动画------->
+        <p>
+            <img src="http://182.92.194.216:2202/GodStatic/images/nav_phone1.png"/>
+            <img src="http://182.92.194.216:2202/GodStatic/images/nav_phone2.png"/>
+        </p>
+        <!-----nav--->
+        <ul>
+            <li><a href="">小米手机</a></li>
+            <li><a href="">红米</a></li>
+            <li><a href="">平板</a></li>
+            <li><a href="">笔记本</a></li>
+            <li><a href="">电视</a></li>
+            <li><a href="">盒子</a></li>
+            <li><a href="">影音</a></li>
+            <li><a href="">路由器</a></li>
+            <li><a href="">智能硬件</a></li>
+            <li><a href="">服务</a></li>
+            <li><a href="">社区</a></li>
+        </ul>
+    </div>
+    <!----------做nav的弹出框---------------->
+    <div id="nav_product">
+        <ul>
+
+        </ul>
+    </div>
+</nav>
+<!----------------banner------------------>
+<div id="banner">
+    <!--------右边主图------------>
+    <div class="sliders">
+
+        <div class="layui-carousel" id="test10">
+            <div carousel-item="">
+                <div><a href="#"><img src="http://182.92.194.216:2202/GodStatic/images/banner_01.gif"></a> </div>
+                <div><a href="#"><img src="http://182.92.194.216:2202/GodStatic/images/banner_2.gif"></a></div>
+                <div><a href="#"><img src="http://182.92.194.216:2202/GodStatic/images/banner_3.gif"></a></div>
+                <div><a href="#"><img src="http://182.92.194.216:2202/GodStatic/images/banner_4.gif"></a></div>
+                <div><a href="#"><img src="http://182.92.194.216:2202/GodStatic/images/banner_5.gif"></a></div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <!-------左边菜单----------->
+    <div id="category">
+        <ul id="pj">
+            <li><a href="">男装&nbsp;女装</a><b></b>
+                <div class="cate_right">
+
+                    <dl>
+                        <dt><h1>标题</h1></dt>
+                        <dd><a href=""></a></dd>
+                    </dl>
+                    <dl>
+                        <dt><h1>标题</h1></dt>
+                        <dd><a href=""></a></dd>
+                    </dl>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!---导航菜单弹出框---->
+
+    <!--------banner底部img--------->
+    <div id="banner_btm">
+        <ul class="lt">
+            <li><a href=""><i></i>选购手机</a></li>
+            <li><a href=""><i></i>企业团购</a></li>
+            <li><a href=""><i></i>官翻产品</a></li>
+            <li><a href=""><i></i>小米移动</a></li>
+            <li><a href=""><i></i>以旧换新</a></li>
+            <li><a href=""><i></i>话费充值</a></li>
+        </ul>
+
+        <a href="" class="lt">
+            <img src="http://182.92.194.216:2202/GodStatic/images/banner_btm1.gif"/>
+        </a>
+        <a href="" class="lt">
+            <img src="http://182.92.194.216:2202/GodStatic/images/banner_btm2.gif"/>
+        </a>
+        <a href="" class="rt">
+            <img src="http://182.92.194.216:2202/GodStatic/images/banner_btm3.gif"/>
+        </a>
+
+    </div>
+</div>
+<!------------主体--------------->
+<section>
+    <!--------//一小米明星---------->
+    <div id="star">
+        <div>
+
+            <h2 class="l">小米明星单品</h2>
+        </div>
+        <div class="star_dl">
+            <dl class="s1">
+                <dt>
+                    <a href=""><img src="http://182.92.194.216:2202/GodStatic/images/star_01.gif"/></a>
+                </dt>
+                <dd>
+                    <h4><a href="">小米电视3s
+                        48英寸</a></h4>
+                    <p>原装液晶屏&nbsp;金属机身</p>
+                </dd>
+                <dd class="Ltc">1999元</dd>
+            </dl>
+            <dl class="s2">
+                <dt>
+                    <a href=""><img src="http://182.92.194.216:2202/GodStatic/images/star_02.gif"/></a>
+                </dt>
+                <dd>
+                    <h4><a href="">小米电视3s
+                        48英寸</a></h4>
+                    <p>原装液晶屏&nbsp;金属机身</p>
+                </dd>
+                <dd class="Ltc">1999元</dd>
+            </dl>
+            <dl class="s3">
+                <dt>
+                    <a href=""><img src="http://182.92.194.216:2202/GodStatic/images/star_03.gif"/></a>
+                </dt>
+                <dd>
+                    <h4><a href="">小米电视3s
+                        48英寸</a></h4>
+                    <p>原装液晶屏&nbsp;金属机身</p>
+                </dd>
+                <dd class="Ltc">1999元</dd>
+            </dl>
+            <dl class="s4">
+                <dt>
+                    <a href=""><img src="http://182.92.194.216:2202/GodStatic/images/star_04.gif"/></a>
+                </dt>
+                <dd>
+                    <h4><a href="">小米电视3s
+                        48英寸</a></h4>
+                    <p>原装液晶屏&nbsp;金属机身</p>
+                </dd>
+                <dd class="Ltc">1999元</dd>
+            </dl>
+            <dl class="s5">
+                <dt>
+                    <a href=""><img src="http://182.92.194.216:2202/GodStatic/images/star_05.gif"/></a>
+                </dt>
+                <dd>
+                    <h4><a href="">小米电视3s
+                        48英寸</a></h4>
+                    <p>原装液晶屏&nbsp;金属机身</p>
+                </dd>
+                <dd class="Ltc">1999元</dd>
+            </dl>
+            <!-------------小米明星产品 6-10--------------->
+        </div>
+    </div>
+    <!-------//二-智能硬件--------->
+    <div id="product_hardware">
+        <a class="rt" href="">查看全部<b>&gt;</b></a>
+        <h2>智能硬件</h2>
+        <a class="prHe" href=""><img src="http://182.92.194.216:2202/GodStatic/images/product_hardware_01.jpg"></a>
+        <ul id="hardware">
+            <li>
+                <div>免邮费</div>
+                <a href=""><img src="http://182.92.194.216:2202/GodStatic/images/product_hardware_02.jpg"></a>
+                <h4><a href="">小米路由器3</a></h4>
+                <p>四线设计，更安全更稳定</p>
+                <span>&yen;149元</span>
+            </li>
+            <li>
+                <div>免邮费</div>
+                <a href=""><img src="http://182.92.194.216:2202/GodStatic/images/product_hardware_03.jpg"></a>
+                <h4><a href="">电助力折叠自行车</a></h4>
+                <p>力矩传感电助力，折叠便携设计</p>
+                <span>&yen;2999元</span>
+            </li>
+            <li>
+                <div>免邮费</div>
+                <a href=""><img src="http://182.92.194.216:2202/GodStatic/images/product_hardware_04.jpg"></a>
+                <h4><a href="">小米VR眼睛玩具版</a></h4>
+                <p>观看新体验，期待总于意料之外</p>
+                <span>&yen;49元</span>
+            </li>
+
+            <li class="no_banner">
+                <a href=""><img src="http://182.92.194.216:2202/GodStatic/images/product_hardware_05.jpg"></a>
+                <h4><a href="">九号平衡车</a></h4>
+                <p>年轻人的酷玩具，骑行遥控两种玩法</p>
+                <span>&yen;1999元</span>
+            </li>
+            <li>
+                <div>新品</div>
+                <a href=""><img src="http://182.92.194.216:2202/GodStatic/images/product_hardware_06.jpg"></a>
+                <h4><a href="">米兔智能故事机</a></h4>
+                <p>宝又不好好吃饭，让米兔来哄宝宝吧</p>
+                <span>&yen;199元</span>
+            </li>
+            <li>
+                <div>免邮费</div>
+                <a href=""><img src="http://182.92.194.216:2202/GodStatic/images/product_hardware_07.jpg"></a>
+                <h4><a href="">米家压力IH电饭煲</a></h4>
+                <p>IH电磁环绕加热，让米粒在锅中跳舞</p>
+                <span>&yen;999元</span>
+            </li>
+            <li>
+                <div>新品</div>
+                <a href=""><img src="http://182.92.194.216:2202/GodStatic/images/product_hardware_08.jpg"></a>
+                <h4><a href="">小米笔记本Air12.5英寸</a></h4>
+                <p>更轻更薄，想杂志一样随身携带</p>
+                <span>&yen;3499元</span>
+            </li>
+            <li>
+                <div>新品</div>
+                <a href=""><img src="http://182.92.194.216:2202/GodStatic/images/product_hardware_09.jpg"></a>
+                <h4><a href="">米家&nbsp;LED&nbsp;智能台灯</a></h4>
+                <p>无可视频闪，亮度色温无级调节</p>
+                <span>&yen;169元</span>
+            </li>
+        </ul>
+    </div>
+
+    <!--------//六--为你推荐------------->
+    <div id="recommended">
+        <div class="top">
+            <b class="rt"></b>
+            <h2 class="lt">为你推荐</h2>
+        </div>
+        <ul class="rt_li">
+
+            <li style="margin-left:0;">
+                <a href=""><img src="http://182.92.194.216:2202/GodStatic/images/recommended_01.gif"></a>
+                <h4><a href="">小米移动电源10000mAH</a></h4>
+                <span>&yen;79元</span>
+                <p>19.6万人评价</p>
+            </li>
+            <li>
+                <a href=""><img src="http://182.92.194.216:2202/GodStatic/images/recommended_02.gif"></a>
+                <h4><a href="">小米圈铁耳机</a></h4>
+                <span>&yen;99元</span>
+                <p>1.7万人评价</p>
+            </li>
+            <li>
+                <a href=""><img src="http://182.92.194.216:2202/GodStatic/images/recommended_03.gif"></a>
+                <h4><a href="">小米移动电源10000mAH
+                    高配版</a></h4>
+                <span>&yen;149元</span>
+                <p>2.3万人评价</p>
+            </li>
+            <li>
+                <a href=""><img src="http://182.92.194.216:2202/GodStatic/images/recommended_04.gif"></a>
+                <h4><a href="">小米蓝牙耳机</a></h4>
+                <span>&yen;69元<s>70元</s></span>
+                <p>19.6万人评价</p>
+            </li>
+            <li style="margin-left:11px;">
+                <a href=""><img src="http://182.92.194.216:2202/GodStatic/images/recommended_05.gif"></a>
+                <h4><a href="">小米插线板</a></h4>
+                <span>&yen;49元</span>
+                <p>25.2万人评价</p>
+            </li>
+        </ul>
+    </div>
+
+
+</section>
+<div id="movies">
+    <a class="rt">
+        产看全部<b>></b>
+    </a>
+    <h2 class="lt">视频</h2>
+    <ul>
+        <li>
+            <a href="#"><img src="http://182.92.194.216:2202/GodStatic/images/mov_01.gif"></a>
+            <p>
+                <a href="#">小米5s“暗夜之眼”中的《香港纪实》</a>
+            </p>
+            <span>更锐利、细腻的创作利器</span>
+        </li>
+        <li>
+            <a href="#"><img src="http://182.92.194.216:2202/GodStatic/images/mov_02.gif"></a>
+            <p>
+                <a href="#">红米年度品牌视频</a>
+            </p>
+            <span>一亿人喜爱你，是一种责任。</span>
+        </li>
+        <li>
+            <a href="#"><img src="http://182.92.194.216:2202/GodStatic/images/mov_03.gif"></a>
+            <p>
+                <a href="#">小米笔记本Air可靠性测试视频</a>
+            </p>
+            <span>小米笔记本Air是如何炼成的？</span>
+        </li>
+        <li>
+            <a href="#"><img src="http://182.92.194.216:2202/GodStatic/images/move_04.jpg"></a>
+            <p>
+                <a href="#">小米Max 绝美外观视频</a>
+            </p>
+            <span>6.44" 大屏黄金尺寸，看什么都震撼</span>
+        </li>
+    </ul>
+</div>
+<footer id="Customer">
+    <ul class="">
+        <li>
+            <a href=""><span></span>预约维修服务</a>
+        </li>
+        <span>丨</span>
+        <li>
+            <a href=""><span></span>7天无理由退货</a>
+        </li>
+        <span>丨</span>
+        <li>
+            <a href=""><span></span>15天免费换货</a>
+        </li>
+        <span>丨</span>
+        <li>
+            <a href=""><span></span>满150元包邮</a>
+        </li>
+        <span>丨</span>
+        <li>
+            <a href=""><span></span>520余家售后网点</a>
+        </li>
+    </ul>
+    <div id="hps">
+        <div class="rt">
+            <div>400-100-5678</div>
+            <p>周一至周日 8:00-18:00</p>
+            <p>（仅收市话费）</p>
+            <a href="#" class="hv">
+                <img src="http://182.92.194.216:2202/GodStatic/images/24h_03.jpg">
+            </a>
+        </div>
+        <ul class="help">
+            <li>
+                <h4>帮助中心</h4>
+                <a href="">账户管理</a>
+                <a href="">购物指南</a>
+                <a href="">订单操作</a>
+            </li>
+            <li>
+                <h4>服务支持</h4>
+                <a href="">售后政策</a>
+                <a href="">自助服务</a>
+                <a href="">相关下载</a>
+            </li>
+            <li>
+                <h4>线下门店</h4>
+                <a href="">小米之家</a>
+                <a href="">服务网点</a>
+                <a href="">零售网点</a>
+            </li>
+            <li>
+                <h4>关于小米</h4>
+                <a href="">了解买来乐</a>
+                <a href="">加入买来乐</a>
+                <a href="">联系我们</a>
+            </li>
+            <li>
+                <h4>关注我们</h4>
+                <a href="">新浪微博</a>
+                <a href="">乐部落</a>
+                <a href="">官方微信</a>
+            </li>
+            <li>
+                <h4>特色服务</h4>
+                <a href="">F码通道</a>
+                <a href="">乐移动</a>
+                <a href="">防伪查询</a>
+            </li>
+        </ul>
+    </div>
+</footer>
+<footer id="ft">
+    <div id="footer">
+        <div class="rt">
+            <a href="#"><img src="http://182.92.194.216:2202/GodStatic/images/v-logo-4.gif"></a>
+            <a href="#"><img src="http://182.92.194.216:2202/GodStatic/images/v-logo-1.png"></a>
+            <a href="#"><img src="http://182.92.194.216:2202/GodStatic/images/v-logo-2.png"></a>
+            <a href="#"><img src="http://182.92.194.216:2202/GodStatic/images/v-logo-3.png"></a>
+        </div>
+
+        <div class="lt">
+            <a href="#">买来乐商城</a>丨
+            <a href="#">MIUI</a>丨
+            <a href="#">乐聊</a>丨
+            <a href="#">多看书城</a>丨
+            <a href="#">买来乐路由器</a>丨
+            <a href="#">视频电话</a>丨
+            <a href="#">买来乐后院</a>丨
+            <a href="#">买来乐天猫店</a>丨
+            <a href="#">买来乐淘宝直营店</a>丨
+            <a href="#">买来乐网盟</a>丨
+            <a href="#">问题反馈</a>丨
+            <a href="#">Select Region</a>
+            <p>
+                &copy;<a href="#">mi.com</a>京ICP证110507号
+                <a href="#"> 京ICP备10046444号 </a>
+                <a href="#"> 京公网安备11010802020134号</a>
+                <a href="#">京网文[2014]0059-0009号</a>
+            </p>
+            违法和不良信息举报电话：185-0130-1238，本网站所列数据，除特殊说明，所有数据均出自我司实验室测试
+        </div>
+    </div>
+    <!--<div class="btm"> </div>-->
+</footer>
+<script src="http://182.92.194.216:2202/GodStatic/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+
+    //加载事件
+    $(function () {
+
+        $.post("product_cate/all/0",{"id":0},function (data) {
+
+            var json=eval("("+data+")");//将数据转成json格式
+
+            $.each(json,function(i,d){
+
+                var li = "<li><a href=''>"+d.mpc_name+"</a><b></b>";
+                var div = "<div class='cate_right'>";
+
+                var second =  d.childList;
+                var dl="";
+                $.each(second,function(i,d){
+
+
+                    var s = "<dl> <dt><h1>"+d.mpc_name+"</h1></dt> <dd><a href=''></a></dd> </dl>";
+
+                    dl = dl+s;
+
+                });
+
+                var end = li+div+dl+"</div></li>";
+
+                $("#pj").append(end);
+
+            });
+
+        },"html")
+
+
+    });
+
+
+
+
+    $("#top_rt p").hover(function () {
+
+
+            $("#top_rt p").css({"background":"white"});
+            $("#top_rt p a").css({"color":"#FF6709"});
+            $("#top_rt p i").css({"color":"#FF6709"});
+        },function () {
+
+            $("#top_rt p").css({"background":"#424242"});
+            $("#top_rt p a").css({"color":"#B0A5A5"});
+            $("#top_rt p i").css({"color":"#B0A5A5"});
+        }
+    )
+
+
+    // $("#category>ul li").hover(
+    //
+    //     function () {
+    //         $(this).find(".cate_right").css({"display":"inline-block"});
+    //
+    //      }
+    //    ,function () {
+    //
+    //         $(this).find(".cate_right").css({"display":"none"});
+    //
+    //
+    //      }
+    // )
+
+    $(document).on("mouseover",'#category>ul li',function () {
+        $(this).find(".cate_right").css({"display":"inline-block"});
+    });
+    $(document).on("mouseout",'#category>ul li',function () {
+        $(this).find(".cate_right").css({"display":"none"});
+    });
+
+
+</script>
+
+<script>
+
+    layui.use(['carousel', 'form'], function(){
+        var carousel = layui.carousel
+            ,form = layui.form;
+
+        //常规轮播
+        carousel.render({
+            elem: '#test1'
+            ,arrow: 'always'
+        });
+
+        //改变下时间间隔、动画类型、高度
+        carousel.render({
+            elem: '#test2'
+            ,interval: 1800
+            ,anim: 'fade'
+            ,height: '120px'
+        });
+
+        //设定各种参数
+        var ins3 = carousel.render({
+            elem: '#test3'
+        });
+        //图片轮播
+        carousel.render({
+            elem: '#test10'
+            ,width: '1224px'
+            ,height: '440px'
+            ,interval: 5000
+        });
+
+        //事件
+        carousel.on('change(test4)', function(res){
+            console.log(res)
+        });
+
+        var $ = layui.$, active = {
+            set: function(othis){
+                var THIS = 'layui-bg-normal'
+                    ,key = othis.data('key')
+                    ,options = {};
+
+                othis.css('background-color', '#5FB878').siblings().removeAttr('style');
+                options[key] = othis.data('value');
+                ins3.reload(options);
+            }
+        };
+
+        //监听开关
+        form.on('switch(autoplay)', function(){
+            ins3.reload({
+                autoplay: this.checked
+            });
+        });
+
+        $('.demoSet').on('keyup', function(){
+            var value = this.value
+                ,options = {};
+            if(!/^\d+$/.test(value)) return;
+
+            options[this.name] = value;
+            ins3.reload(options);
+        });
+
+        //其它示例
+        $('.demoTest .layui-btn').on('click', function(){
+            var othis = $(this), type = othis.data('type');
+            active[type] ? active[type].call(this, othis) : '';
+        });
+    });
+</script>
+
+</body>
+</html>

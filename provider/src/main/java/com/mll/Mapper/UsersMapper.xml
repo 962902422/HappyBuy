@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mll.Mapper.UsersMapper">
+<select id="getUser" resultType="MLL_User">
+SELECT *  FROM `MLL`.`MLL_USERS` WHERE mu_user_name=#{username}
+</select>
+    <select id="checkUserName" resultType="int">
+        SELECT COUNT(*) FROM MLL_USERS WHERE mu_user_name=#{username}
+    </select>
+    <select id="checkMobile" resultType="int">
+        SELECT COUNT(*) FROM MLL_USERS WHERE mu_mobile=#{mobile}
+    </select>
+    <insert id="resiterUser" parameterType="MLL_User">
+        INSERT INTO `MLL`.`MLL_USERS`(`mu_user_name`,`mu_password`,`mu_headphoto`,`mu_registerTime`,`mu_email`,`mu_mobile`,`mu_status`)
+        VALUES(#{mu_user_name},#{mu_password},#{mu_headphoto},#{mu_registerTime},#{mu_email},#{mu_mobile},#{mu_status})
+    </insert>
+    <select id="ByMobileLoginOrReg" resultType="MLL_User">
+        SELECT *  FROM MLL_USERS WHERE mu_mobile=#{mobile}
+    </select>
+    <update id="ByMobileUpdatePwd">
+        UPDATE `MLL`.`MLL_USERS` SET `mu_password`=#{pwd} WHERE`mu_mobile` =#{mobile}
+    </update>
+</mapper>
