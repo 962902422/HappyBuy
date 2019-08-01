@@ -65,17 +65,17 @@
             <version>[1.2.5,)</version>
         </dependency>
 
-        <dependency>
+        <!--<dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
             <version>2.1.4.RELEASE</version>
         </dependency>
-        <!-- 分布式session-->
+        &lt;!&ndash; 分布式session&ndash;&gt;
         <dependency>
             <groupId>org.springframework.session</groupId>
             <artifactId>spring-session-data-redis</artifactId>
             <version>2.1.4.RELEASE</version>
-        </dependency>
+        </dependency>-->
 
         <!--缓存-->
         <dependency>

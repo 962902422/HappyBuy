@@ -21,6 +21,7 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+            <version>2.1.1.RELEASE</version>
         </dependency>
         <!-- actuator监控信息完善-->
         <dependency>
@@ -84,16 +85,16 @@
             <version>2.0.0</version>
         </dependency>
 
-        <dependency>
+        <!--<dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
             <version>2.1.4.RELEASE</version>
         </dependency>
-        <!-- 分布式session -->
+        &lt;!&ndash; 分布式session &ndash;&gt;
         <dependency>
             <groupId>org.springframework.session</groupId>
             <artifactId>spring-session-data-redis</artifactId>
             <version>2.1.4.RELEASE</version>
-        </dependency>
+        </dependency>-->
     </dependencies>
 </project>
