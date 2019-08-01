@@ -19,7 +19,7 @@ public class UserController {
     @RequestMapping("/login")
     @ResponseBody
     public String login(String userName,String password){
-        if("admin".equals(userName)&&userService.password().equals(password)){
+        if("admin".equals(userName)&&userService.userinfo().getMu_password().equals(password)){
             return "success";
         }
         return "error";
@@ -39,9 +39,14 @@ public class UserController {
     @RequestMapping("/selAllUser")
     @ResponseBody
     public List<MLL_User> sellAllUser(){
-
         String str="[{\"code\": 0,\"msg\": \"\",\"count\": page.count,\"data\":"+userService.selAllUser()+"}]";
         System.out.println(str);
         return userService.selAllUser();
+    }
+
+    @RequestMapping("/userinfo")
+    @ResponseBody
+    public MLL_User userinfo(){
+        return userService.userinfo();
     }
 }

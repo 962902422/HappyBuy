@@ -1,14 +1,18 @@
 package com.mll.mapper;
 
+import com.mll.pojo.Details;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Mapper
 @Repository
-public interface commodityMapper {
+public interface CommodityMapper {
 
-    /*@Select("SELECT * FROM `MLL`.`MLL_PRODUCT` \n" +
-            "LIMIT 0, 1000;")*/
+    @Select("SELECT * FROM `MLL`.`MLL_PRODUCT` ")
+    List<Details> selAllCommodity();
+
 
 }

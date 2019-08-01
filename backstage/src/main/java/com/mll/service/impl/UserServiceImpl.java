@@ -22,8 +22,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public String password() {
-        return userMapper.password();
+    public MLL_User userinfo() {
+        return userMapper.userinfo();
     }
 
     @Override

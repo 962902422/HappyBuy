@@ -8,7 +8,7 @@ public interface UserService {
 
     MLL_User login(String username, String password);
 
-    String password();
+    MLL_User userinfo();
 
     List<MLL_User> selAllUser();
 }

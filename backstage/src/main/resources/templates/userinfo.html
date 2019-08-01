@@ -5,32 +5,22 @@
     <title></title>
 </head>
 <body>
+<script type="text/javascript" src="http://182.92.194.216:2202/PGPengStatic/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $.post("/backstage/userinfo",null,function(data){
+            $("#table").append("<tr style='height: 100px;'><td align='center' colspan='2'><img width='80px' height='80px' src='http://182.92.194.216:2202/GJStatic/"+data.mu_headphoto+"'/></td></tr>" +
+                "<tr><td>用户名</td><td><input type='text' value='"+data.mu_user_name+"'/></td></tr>" +
+                "<tr><td>密码</td><td><input type='text' value='"+data.mu_password+"'/></td></tr>" +
+                "<tr><td>注册时间</td><td><input type='text' value='"+data.mu_registerTime+"'/></td></tr>" +
+                "<tr><td>绑定邮箱</td><td><input type='text' value='"+data.mu_email+"'/></td></tr>" +
+                "<tr><td>手机号码</td><td><input type='text' value='"+data.mu_mobile+"'/></td></tr>");
+        },"json")
+    })
+</script>
 <div id="context" style="width: 99%;height: 605px;">
-    <table border="1" cellspacing="0" cellpadding="0" width="100%" style="height: 100%">
-        <tr align="center">
-            <td>用户头像</td>
-        </tr>
-        <tr>
-            <td>用户名</td>
-        </tr>
-        <tr>
-            <td>用户手机</td>
-        </tr>
-        <tr>
-            <td>用户邮箱</td>
-        </tr>
-        <tr>
-            <td>用户注册日期</td>
-        </tr>
-        <tr>
-            <td>用户地址1</td>
-        </tr>
-        <tr>
-            <td>用户地址2</td>
-        </tr>
-        <tr>
-            <td>用户地址3</td>
-        </tr>
+    <table id="table" border="1" cellspacing="0" cellpadding="0" width="100%" style="height: 100%">
+
     </table>
 </div>
 </body>

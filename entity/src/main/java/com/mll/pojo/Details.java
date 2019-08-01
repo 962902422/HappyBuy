@@ -1,13 +1,11 @@
 package com.mll.pojo;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Date;
-
 
 @Setter
 @Getter
@@ -29,17 +27,10 @@ public class Details {//商品详情类
     private String mp_image_xiangqing;//商品详情介绍图片
     private String mm_model;//商品型号
     private String mpr_price;//商品价格
-
     //小图片
     private String mp_image;
-
     //添加的时间
     private Date mp_time;
-
     //是否是热销产品
     private int mp_buy_id;
-
-
-
-
 }

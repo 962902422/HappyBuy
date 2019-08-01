@@ -17,9 +17,9 @@ public interface UserMapper {
 
     MLL_User login(@Param("username") String username, @Param("password") String password);
 
-    @Select("SELECT mu_password FROM `MLL`.`MLL_USERS` " +
+    @Select("SELECT * FROM `MLL`.`MLL_USERS` " +
             "WHERE mu_user_name='admin' ")
-    String password();
+    MLL_User userinfo();
 
     @Select("SELECT  `mu_user_id`,`mu_user_name`,`mu_password`,`mu_headphoto`,`mu_registerTime`,`mu_email`,`mu_mobile`,`mu_status` " +
             " FROM `MLL`.`MLL_USERS` ")
