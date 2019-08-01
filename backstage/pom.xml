@@ -12,5 +12,62 @@
     <groupId>com.mll</groupId>
     <artifactId>backstage</artifactId>
 
+    <dependencies>
+        <!-- 引入comm通用包，可以使用Dept -->
+        <dependency>
+            <groupId>com.mll</groupId>
+            <artifactId>entity</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <!-- actuator监控信息完善-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
 
+        <!-- 将微服务provider注册进eureka -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jetty</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- 热部署 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+        </dependency>
+
+        <!-- 微服务配置中心
+     <dependency>
+         <groupId>org.springframework.cloud</groupId>
+         <artifactId>spring-cloud-starter-config</artifactId>
+     </dependency>
+     -->
+    </dependencies>
 </project>
