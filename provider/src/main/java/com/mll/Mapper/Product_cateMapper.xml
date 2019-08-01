@@ -12,5 +12,26 @@
     </select>
 
 
+    <select id="findRandom" resultType="Details">
+
+
+      SELECT * FROM MLL_PRODUCT WHERE mp_id IN
+        <foreach collection="array" item="item"  open="(" separator="," close=")">
+            #{item}
+        </foreach>
+
+    </select>
+
+    <select id="NewProduct" resultType="Details">
+
+        SELECT * FROM  MLL_PRODUCT ORDER BY mp_time DESC  LIMIT 0,8
+
+    </select>
+
+    <select id="FireBuy" resultType="Details">
+
+        SELECT * FROM MLL_PRODUCT ORDER BY mp_buy_id DESC LIMIT 0,5
+
+    </select>
 
 </mapper>
