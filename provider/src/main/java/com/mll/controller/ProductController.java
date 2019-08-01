@@ -1,16 +1,15 @@
 package com.mll.controller;
 
 
+import com.mll.pojo.Details;
 import com.mll.pojo.MLL_PRODUCT_CATEGORY;
 import java.util.List;
+import java.util.Map;
 
 import com.mll.service.Product_cateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class ProductController {
@@ -21,8 +20,33 @@ public class ProductController {
     @RequestMapping("/product/all/{id}")
     @ResponseBody
    public List<MLL_PRODUCT_CATEGORY> findAll(@PathVariable int id){
-        System.out.println("sssssssssssssssssssss");
-      return ps.findAll(id);
-   }
+
+        return ps.findAll(id);
+
+
+    }
+
+    @RequestMapping("/product/random")
+    @ResponseBody
+    public List<Details> findrandom(@RequestBody int[] mc_id){
+
+
+
+        return ps.findRandom(mc_id);
+    }
+
+
+    @RequestMapping("/product/newproduct")
+    @ResponseBody
+    public List<Details> NewProduct(){
+
+        return ps.NewProduct();
+    }
+
+    @RequestMapping("/product/firebuy")
+    @ResponseBody
+    public List<Details> FireBuy(){
+        return ps.FireBuy();
+    }
 
 }

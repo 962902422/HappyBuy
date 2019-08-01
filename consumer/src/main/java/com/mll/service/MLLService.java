@@ -45,4 +45,13 @@ public interface MLLService {
     **/
     @RequestMapping("/product/all/{id}")
     public List<MLL_PRODUCT_CATEGORY> findAll(@PathVariable("id") int id);
+
+    @RequestMapping("/product/random")
+    public List<Details> findRandom(@RequestBody  int[] mc_id);
+
+    @RequestMapping("/product/newproduct")
+    public List<Details> NewProduct();
+
+    @RequestMapping("/product/firebuy")
+    public List<Details> FireBuy();
 }

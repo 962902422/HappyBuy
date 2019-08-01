@@ -1,6 +1,7 @@
 package com.mll.service.impl;
 
 import com.mll.Mapper.Product_cateMapper;
+import com.mll.pojo.Details;
 import com.mll.pojo.MLL_PRODUCT_CATEGORY;
 import java.util.List;
 
@@ -16,26 +17,48 @@ public class Product_cateServiceImpl implements Product_cateService {
     private Product_cateMapper pdao;
 
 
-    @Cacheable(value = "mycate")
+    @Cacheable(value = "cate")
     @Override
     public List<MLL_PRODUCT_CATEGORY> findAll(int id) {
 
         List<MLL_PRODUCT_CATEGORY> all = pdao.findAll(id);
+
         for (MLL_PRODUCT_CATEGORY mll : all) {
 
-            mll.setChildList(pdao.findAll(mll.getMpc_id()));
 
-                List<MLL_PRODUCT_CATEGORY> childList = mll.getChildList();
-                for (MLL_PRODUCT_CATEGORY mll_product_category : childList) {
+                mll.setChildList(pdao.findAll(mll.getMpc_id()));
 
-                    mll_product_category.setChildList(pdao.findAll(mll.getMpc_id()));
+
+                for (MLL_PRODUCT_CATEGORY mc : mll.getChildList()) {
+
+
+
+                    mc.setChildList(pdao.findAll(mc.getMpc_id()));
 
                 }
 
 
-            System.out.println(mll);
+
         }
         return all;
+
+    }
+
+    @Override
+    public List<Details> findRandom(int[] mc_id) {
+
+        return pdao.findRandom(mc_id);
+    }
+
+    @Override
+    public List<Details> NewProduct() {
+        return pdao.NewProduct();
+    }
+
+    @Override
+    public List<Details> FireBuy() {
+
+        return pdao.FireBuy();
 
     }
 
