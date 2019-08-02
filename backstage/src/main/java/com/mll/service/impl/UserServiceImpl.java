@@ -1,6 +1,9 @@
 package com.mll.service.impl;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import com.mll.mapper.UserMapper;
+import com.mll.pojo.Details;
 import com.mll.pojo.MLL_User;
 import com.mll.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +30,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<MLL_User> selAllUser() {
-        return userMapper.selAllUser();
+    public Page<MLL_User> selAllUser(int pageIndex,int pageSize) {
+        Page<MLL_User> page=PageHelper.startPage(pageIndex, pageSize);
+        userMapper.selAllUser();
+        return page;
     }
 }

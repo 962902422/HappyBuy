@@ -5,28 +5,10 @@
     <title></title>
 </head>
 <body>
-<!--<script type="text/javascript" src="http://182.92.194.216:2202/PGPengStatic/js/jquery-1.8.3.min.js"></script>-->
 <meta name="renderer" content="webkit">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link rel="stylesheet" href="http://182.92.194.216:2202/PGPengStatic/layui/css/layui.css"  media="all">
-<!--<script type="text/javascript">
-    $(function(){
-        $.post("/backstage/selAllUser",null,function (data) {
-            $.each(data ,function (i,d) {
-                var tr="<tr><td>"+d.mu_user_id+"</td><td>"+d.mu_user_name+"</td><td>"+d.mu_password+"</td>" +
-                    "<td>"+d.mu_headphoto+"</td><td>"+d.mu_registerTime+"</td><td>"+d.mu_email+"</td>" +
-                    "<td>"+d.mu_mobile+"</td></tr>";
-                $("#alluser").append(tr);
-            });
-            },"json");
-    })
-</script>-->
-
-<!--<div id="context" style="width: 99%;height: 565px;">
-
-
-</div>-->
 <table class="layui-hide" id="test"></table>
 <script src="http://182.92.194.216:2202/PGPengStatic/layui/layui.js" charset="utf-8"></script>
 <script>
@@ -36,31 +18,27 @@
             elem: '#test'
             ,url:'/backstage/selAllUser'
             ,cols: [[
-                {field:'mu_user_id', width:100, title: 'ID', sort: true}
-                ,{field:'mu_user_name', width:200, title: '用户名'}
-                ,{field:'mu_password', width:200, title: '密码'}
-                ,{field:'mu_headphoto', width:250, title: '电话'}
-                ,{field:'mu_registerTime',width:250, title: '注册时间'}
-                ,{field:'mu_email', width:250, title: '邮箱'}
-                ,{field:'mu_mobile', width:140, title: '评分'}
-                ,{field:'mu_status', width:135, title: '状态'}
+                {field:'mu_user_id', width:60, title: 'ID', sort: true}
+                ,{field:'mu_user_name', width:100, title: '用户名'}
+                ,{field:'mu_password', width:230, title: '密码'}
+                /*,{field:'mu_headphoto', width:250, title: '头像'}*/
+                ,{field:'mu_registerTime',width:160, title: '注册时间'}
+                ,{field:'mu_email', width:170, title: '邮箱'}
+                ,{field:'mu_mobile', width:196, title: '收货地址1'}
+                ,{field:'mu_mobile', width:196, title: '收货地址2'}
+                ,{field:'mu_mobile', width:195, title: '收货地址3'}
             ]]
             ,page: true
-            ,response: {
-                statusName: "status",
-                statusCode: 200 //重新规定成功的状态码为 200，table 组件默认为 0
-                ,msgName: "hint"
-                ,countName: "total"
-                ,dataName: "rows"
+            ,request:{
+                pageName:"currentPage",
+                limitName:"size"
             }
             ,parseData: function(res){ //将原始数据解析成 table 组件所规定的数据
-                var d="[{\"code\": 0,\"msg\": \"\",\"count\": 3,\"data\":"+res+"}]";
-                alert(d);
                 return {
-                    "code": d.status, //解析接口状态
-                    "msg": d.message, //解析提示文本
-                    "count": d.total, //解析数据长度
-                    "data": d.data.item //解析数据列表
+                    "code": 0, //解析接口状态
+                    "msg": "", //解析提示文本
+                    "count": res[0].count, //解析数据长度
+                    "data": res[0].data //解析数据列表
                 };
             }
         });

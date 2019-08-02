@@ -19,8 +19,8 @@ public class CommodityServiceImpl implements CommodityService {
     private CommodityMapper commodityMapper;
 
     @Override
-    public List<Details> selAllCommodity(int pageIndex) {
-        Page<Details> page = PageHelper.startPage(pageIndex, 2);
+    public Page<Details> selAllCommodity(int pageIndex,int size) {
+        Page<Details> page = PageHelper.startPage(pageIndex, size);
         commodityMapper.selAllCommodity();
         return page;
     }
