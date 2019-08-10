@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>layui</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="http://182.92.194.216:2202/PGPengStatic/layui/css/layui.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" type="text/css" href="http://182.92.194.216:2202/PGPengStatic/js/treetable-lay/treetable.css" media="all">
+    <script type="text/javascript" src="http://182.92.194.216:2202/PGPengStatic/js/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+<script src="http://182.92.194.216:2202/PGPengStatic/layui/layui.js" charset="utf-8"></script>
+<input type="hidden" th:value="${session.succeed}" id="pid"/>
+<div class="xm">
+    <div class="xm-d1" style="margin: 10px">
+        <strong><p class="xm-d1-p" style="font-size: 18px">分类管理</p></strong>
+    </div>
+    <div class="xm-d2">
+        <div class="xm-d2-hang1">
+            <div class="pzright" style="width:100%;display: flex;justify-content: flex-start;float:right;">
+                <p class="xm-d1-p2">
+                    <button id="add" class="layui-btn layui-btn-radius btnys">+ 添加</button>
+                    <button class="layui-btn" id="btn-expand">全部展开</button>
+                    <button class="layui-btn" id="btn-fold">全部折叠</button>
+                    <button class="layui-btn" id="btn-refresh">刷新表格</button>
+                </p>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="xm-d2-hang2">
+            <table id="permissionTable" class="layui-table" lay-filter="permissionTable"></table>
+        </div>
+    </div>
+</div>
+<div id='bindPage' style = "display : none">
+    <div class="layui-card-body">
+        <form action="/backstage/add" class="layui-form">
+            <div class="layui-form-item">
+                <input style="width: 320px;height: 38px;border: 1px silver solid;margin:20px 0px" type="tel" placeholder="请输入名称" name="name"  autocomplete="off" class="layui-input">
+            </div>
+            <div class="layui-form-item">
+                <select lay-filter="one" id="one" name="pid" style="width: 320px;height: 38px;">
+                    <option value="0">一级菜单</option>
+                </select>
+            </div>
+            <div class="layui-form-item">
+                <select lay-filter="two" id="two" name="pid2" style="width: 320px;height: 38px;margin-top: 20px">
+                    <option value="0">二级菜单</option>
+                </select>
+            </div>
+            <button class="sub-bindbtn" lay-submit lay-filter="bind" style="display: none;">
+            </button>
+        </form>
+    </div>
+</div>
+<div class="alert"></div>
+<style type="text/css">
+    #getVerifyCode{cursor: pointer; outline: none;}
+    .alert {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        min-width: 200px;
+        margin-left: -100px;
+        z-index: 99999;
+        padding: 15px;
+        border: 1px solid transparent;
+        border-radius: 4px;
+    }
+    .alert-success {
+        color: #3c763d;
+        background-color: #dff0d8;
+        border-color: #d6e9c6;
+    }
+    .alert-info {
+        color: #31708f;
+        background-color: #d9edf7;
+        border-color: #bce8f1;
+    }
+    .alert-warning {
+        color: #8a6d3b;
+        background-color: #fcf8e3;
+        border-color: #faebcc;
+    }
+    .alert-danger {
+        color: #a94442;
+        background-color: #f2dede;
+        border-color: #ebccd1;
+    }
+</style>
+<style type="text/css">
+    #getVerifyCode{cursor: pointer; outline: none;}
+    .alert {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        min-width: 200px;
+        margin-left: -100px;
+        z-index: 99999;
+        padding: 15px;
+        border: 1px solid transparent;
+        border-radius: 4px;
+    }
+    .alert-success {
+        color: #3c763d;
+        background-color: #dff0d8;
+        border-color: #d6e9c6;
+    }
+    .alert-info {
+        color: #31708f;
+        background-color: #d9edf7;
+        border-color: #bce8f1;
+    }
+    .alert-warning {
+        color: #8a6d3b;
+        background-color: #fcf8e3;
+        border-color: #faebcc;
+    }
+    .alert-danger {
+        color: #a94442;
+        background-color: #f2dede;
+        border-color: #ebccd1;
+    }
+</style>
+<script type="text/html" id="oper-col">
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="edit">修改</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+<script type="text/javascript">
+    $(function () {
+        if($("#pid").val()=="true"){
+            $('.alert').html('添加成功！').addClass('alert-success').show(0).delay(1500).fadeOut(0);
+        }else if($("#pid").val()=="false"){
+            $('.alert').html('添加失败！').addClass('alert-success').show(0).delay(1500).fadeOut(0);
+        }else if($("#pid").val()=="null"){
+            $('.alert').html('添加失败,由于您未输入名称！').addClass('alert-success').show(0).delay(2000).fadeOut(0);
+        }else if($("#pid").val()=="reduplication"){
+            $('.alert').html('该分类已存在,无需再次添加！').addClass('alert-success').show(0).delay(2000).fadeOut(0);
+        }
+    })
+</script>
+<script>
+    layui.config({
+        base: 'http://182.92.194.216:2202/PGPengStatic/js/'
+    }).use(['layer', 'table', 'treetable','form'], function () {
+        var $ = layui.jquery;
+        var table = layui.table;
+        var layer = layui.layer;
+        var form = layui.form;
+        var treetable = layui.treetable;
+            var renderTable = function () {//树桩表格参考文档：https://gitee.com/whvse/treetable-lay
+            layer.load(2);
+            treetable.render({
+                treeColIndex: 1,//树形图标显示在第几列
+                treeSpid: 0,//最上级的父级id
+                treeIdName: 'id',//id字段的名称
+                treePidName: 'pid',//pid字段的名称
+                treeDefaultClose: true,//是否默认折叠
+                treeLinkage: false,//父级展开时是否自动展开所有子级
+                elem: '#permissionTable',
+                url: '/backstage/selCommodityClass',
+                page: false,
+                cols: [ [
+                    {type: 'numbers', title: '编号'},
+                    {field: 'id', title: 'id'},
+                    {field: 'name', title: '名称'},
+                    {templet: '#oper-col', title: '操作'}
+                ]],
+                done: function () {
+                    layer.closeAll('loading');
+                }
+            });
+        }
+        renderTable();
+        //触发三个button按钮
+        $('#btn-expand').click(function () {
+            treetable.expandAll('#permissionTable');
+        });
+
+        $('#btn-fold').click(function () {
+            treetable.foldAll('#permissionTable');
+        });
+
+        $('#btn-refresh').click(function () {
+            renderTable();
+        });
+        $('#add').click(function () {
+            layer.open({
+                type: 6,
+                title: '添加分类'
+                ,area:['350px', '300px']
+                ,btn: ["确定","取消"]
+                ,content: $('#bindPage').html()
+                ,success:function (layero, index) {
+                    form.render('select');
+                }
+                ,yes:function (index,layero) {
+                    layero.find('.sub-bindbtn').click();
+                }
+            });
+        });
+        $.post("/backstage/selByid",function (res) {
+            $.each(res,function(i,data){
+                $("#one").append("<option value='"+data.mpc_id+"'>"+data.mpc_name+"</option>");
+            });
+        },"json");
+        form.on('select(one)', function(data){
+            $.post("/backstage/selBypid",{"pid":data.value},function (res) {
+                $("#two").empty();
+                var option = "<option value=\"0\">二级菜单</option>";
+                $.each(res,function(i,d){
+                    option+="<option value='"+d.mpc_id+"'>"+d.mpc_name+"</option>";
+                });
+                $("#two").html(option);
+                form.render('select');
+            },"json");
+        });
+
+        function del(id){
+            $.post("/backstage/del",{"id":id},function (res) {
+               if(res=="succeed"){
+                   $('.alert').html('删除成功！').addClass('alert-success').show(0).delay(1500).fadeOut(0);
+                   renderTable();
+               }else{
+                   $('.alert').html('删除失败！').addClass('alert-success').show(0).delay(1500).fadeOut(0);
+               }
+            },"text");
+        }
+        //监听工具条
+        table.on('tool(permissionTable)', function (obj) {
+            var data = obj.data;
+            var layEvent = obj.event;
+            if(data.permissionName==null){
+                if (layEvent === 'del') {
+                    $.post("/backstage/count",{"id":data.id},function (res) {
+                        if(res=="succeed"){
+                            if(confirm("此分类下面还有分类,确定删除吗！","提示")){
+                                del(data.id);
+                            }
+                        }else{
+                            if(confirm("确定删除吗!","提示")){
+                                del(data.id);
+                            }
+                        }
+                    },"text");
+                } else if (layEvent === 'edit') {
+                    layer.prompt({title: '请输入新的分类名称'},function(val, index){
+                        if(val!=null){
+                            if(val==""){
+                                $('.alert').html('修改失败,内容不能为空！').addClass('alert-success').show(0).delay(1500).fadeOut(0);
+                            }else{
+                                $.post("/backstage/upd",{"id":data.id,"name":val},function (res) {
+                                    if(res=="succeed"){
+                                        $('.alert').html('修改成功！').addClass('alert-success').show(0).delay(1500).fadeOut(0);
+                                        renderTable();
+                                    }else{
+                                        $('.alert').html('修改失败！').addClass('alert-success').show(0).delay(1500).fadeOut(0);
+                                    }
+                                },"text")
+                            }
+                        }
+                        layer.close(index);
+                    });
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>

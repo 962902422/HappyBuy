@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="http://182.92.194.216:2202/PGPengStatic/layui/css/layui.css"  media="all">
+    <script src="http://182.92.194.216:2202/PGPengStatic/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="http://182.92.194.216:2202/PGPengStatic/js/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+<script>
+    /*$(function () {
+        $.post("/backstage/commoditybuy",function(res){
+            $.each(res,function (i,data) {
+               var image= data.mp_file_image.split(",");
+                $("#div").append("<div><img src=\""+image[0]+"\"/></div>");
+            })
+        },"json");
+    })*/
+</script>
+<div class="layui-carousel" id="test10">
+    <div id="div" carousel-item="">
+        <div><img src="http://182.92.194.216:2202/PGStatic/image/jp/js1.jpg"></div>
+        <div><img src="http://182.92.194.216:2202/PGStatic/image/4a/xq2.png"></div>
+        <div><img src="http://182.92.194.216:2202/PGStatic/image/4a/xq3.png"></div>
+        <div><img src="http://182.92.194.216:2202/PGStatic/image/4a/xq4.png"></div>
+        <div><img src="http://182.92.194.216:2202/PGStatic/image/4a/xq5.png"></div>
+        <div><img src="http://182.92.194.216:2202/PGStatic/image/4a/xq6.png"></div>
+    </div>
+</div>
+<script>
+    layui.use(['carousel', 'form'], function(){
+        var carousel = layui.carousel
+            ,form = layui.form;
+        //图片轮播
+        carousel.render({
+            elem: '#test10'
+            ,width: '100%'
+            ,height: '600px'
+            ,interval: 2000
+        });
+    });
+</script>
+</body>
+</html>

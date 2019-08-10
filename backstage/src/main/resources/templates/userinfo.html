@@ -5,24 +5,184 @@
     <title></title>
 </head>
 <body>
+<link rel="stylesheet" href="http://182.92.194.216:2202/GJStatic/css/Address.css">
 <link href="http://182.92.194.216:2202/PGPengStatic/layui/css/layui.css" rel="stylesheet" media="all">
 <script type="text/javascript" src="http://182.92.194.216:2202/PGPengStatic/js/jquery-1.8.3.min.js"></script>
+<script src="http://182.92.194.216:2202/PGPengStatic/layui/layui.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://182.92.194.216:2202/GJStatic/AddressJS/Popt.js"></script>
+<script type="text/javascript" src="http://182.92.194.216:2202/GJStatic/AddressJS/city.json.js"></script>
+<script type="text/javascript" src="http://182.92.194.216:2202/GJStatic/AddressJS/citySet.js"></script>
+<link href="http://182.92.194.216:2202/PGPengStatic/layui/css/layui.css" rel="stylesheet" media="all">
 <script type="text/javascript">
     $(function(){
+        function resolvingDate(date){
+            let d = new Date(date);
+            let month = (d.getMonth() + 1) < 10 ? '0'+(d.getMonth() + 1) : (d.getMonth() + 1);
+            let day = d.getDate()<10 ? '0'+d.getDate() : d.getDate();
+            let hours = d.getHours()<10 ? '0'+d.getHours() : d.getHours();
+            let min = d.getMinutes()<10 ? '0'+d.getMinutes() : d.getMinutes();
+            let sec = d.getSeconds()<10 ? '0'+d.getSeconds() : d.getSeconds();
+            let times=d.getFullYear() + '-' + month + '-' + day /*+ ' ' + hours + ':' + min + ':' + sec*/;
+            return times
+        }
         $.post("/backstage/userinfo",null,function(data){
-            $("#table").append("<tr style='height: 100px;'><td align='center' colspan='2'><img width='80px' height='80px' src='http://182.92.194.216:2202/GJStatic/"+data.mu_headphoto+"'/></td></tr>" +
-                "<tr><td>用户名</td><td><input type='text' value='"+data.mu_user_name+"'/></td></tr>" +
-                "<tr><td>密码</td><td><input type='text' value='"+data.mu_password+"'/></td></tr>" +
-                "<tr><td>注册时间</td><td><input type='text' value='"+data.mu_registerTime+"'/></td></tr>" +
-                "<tr><td>绑定邮箱</td><td><input type='text' value='"+data.mu_email+"'/></td></tr>" +
-                "<tr><td>手机号码</td><td><input type='text' value='"+data.mu_mobile+"'/></td></tr>");
+            var date=resolvingDate(data.mu_registerTime);
+            $("#demo1").attr("src","/backstage/"+data.mu_headphoto);
+            $("#username").attr("value",data.mu_user_name);
+            $("#password").attr("value",data.mu_password);
+            $("#date1").attr("value",date);
+            $("#email").attr("value",data.mu_email);
+            $("#phone").attr("value",data.mu_mobile);
+            $("#postcode").attr("value",data.mr_postal_code);
+            $("#name").attr("value",data.mr_name);
+            $("#city").attr("value",data.mr_address);
+            $("#detailaddress").attr("value",data.mr_detail_address);
         },"json")
     })
-</script>
+    </script>
 <div id="context" style="width: 99%;height: 605px;">
-    <table id="table" border="1" cellspacing="0" cellpadding="0" width="100%" style="height: 100%">
+    <form class="layui-form layui-form-pane" action="/backstage/updAdmin">
+        <div style="float: left;padding: 80px;">
+            <div class="layui-form-item">
+                <div class="layui-upload">
+                    <div class="layui-upload-list">
+                        <img width='250px' height='250px' class="layui-upload-img" id="demo1">
+                        <p id="demoText"></p>
+                    </div>
+                    <button style="margin-left: 80px;" type="button" class="layui-btn" id="test1">更换头像</button>
+                </div>
+            </div>
+        </div>
+        <div style="float: left;padding: 50px 50px 0px 50px;">
+            <div class="layui-form-item" style="margin-bottom: 40px;">
+                <label class="layui-form-label">用户名</label>
+                <div class="layui-input-block">
+                    <input id="username" type="text" name="title" autocomplete="off" disabled class="layui-input">
+                </div>
+            </div>
+        <div class="layui-form-item"  style="margin-bottom: 40px;">
+            <label class="layui-form-label">密码</label>
+            <div class="layui-input-inline">
+                <input style="width: 530px" id="password" type="password" name="password" placeholder="请输入密码" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item"  style="margin-bottom: 40px;">
+            <div class="layui-inline">
+                <label class="layui-form-label">注册时间</label>
+                <div class="layui-input-block">
+                    <input type="text" name="date" id="date1" disabled autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">绑定邮箱</label>
+                <div class="layui-input-inline">
+                    <input id="email" type="text" name="email" lay-verify="email" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item"  style="margin-bottom: 40px;">
+            <div class="layui-inline">
+                <label class="layui-form-label">手机</label>
+                <div class="layui-input-inline">
+                    <input id="phone" type="tel" name="phone" lay-verify="required|phone" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">收货名</label>
+                <div class="layui-input-inline">
+                    <input id="name" type="text" name="username" lay-verify="required" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">收货地址</label>
+            <div class="layui-input-inline">
+                <div class="wrap">
+                <input style="border-left: none;width: 500px;height: 36px;margin-left: -109px;font-size: 15px" class="input" name="address" id="city" type="text" placeholder="请选择" autocomplete="off" readonly="true">
+                <s></s>
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item"  style="margin-bottom: 40px;">
+            <label class="layui-form-label">详细地址</label>
+            <div class="layui-input-block">
+                <div class="layui-input-inline">
+                    <input id="detailaddress" type="text" name="addressInfo" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">收货邮编</label>
+            <div class="layui-input-inline">
+                <input id="postcode" type="text" name="code" lay-verify="required" autocomplete="off" class="layui-input">
+            </div>
+        </div>
 
-    </table>
+        </div>
+        <div class="layui-form-item" style="float: right">
+            <div class="layui-input-inline">
+                <button class="layui-btn" lay-submit="" lay-filter="demo1">修改</button>
+            </div>
+        </div>
+    </form>
 </div>
+<script>
+    layui.use(['form', 'layedit', 'laydate'], function(){
+        var form = layui.form
+            ,layer = layui.layer
+            ,layedit = layui.layedit
+            ,laydate = layui.laydate,$=layer.jquery;
+        //日期
+        laydate.render({
+            elem: '#date'
+        });
+        laydate.render({
+            elem: '#date1'
+        });
+        //监听提交
+        form.on('submit(demo1)', function(data){
+            layer.msg('修改成功');
+            return true;
+        });
+    });
+</script>
+<script>
+    layui.use('upload', function(){
+        var $ = layui.jquery
+            ,upload = layui.upload;
+        //普通图片上传
+        var uploadInst = upload.render({
+            elem: '#test1'
+            ,url: '/backstage/updimage'
+            ,before: function(obj){
+                obj.preview(function(index, file, result){
+                    $('#demo1').attr('src', result); //图片链接（base64）
+                });
+            }
+            ,done: function(res){
+                if(res.code > 0){
+                    return layer.msg('更换失败');
+                }
+                //上传成功
+                return layer.msg('更换成功');
+            }
+            ,error: function(){
+                //演示失败状态，并实现重传
+                var demoText = $('#demoText');
+                demoText.html('<span style="color: #FF5722;">更换失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
+                demoText.find('.demo-reload').on('click', function(){
+                    uploadInst.upload();
+                });
+            }
+        });
+    });
+</script>
+<script type="text/javascript">
+    $("#city").click(function (e) {
+        SelCity(this, e);
+    });
+    $("s").click(function (e) {
+        SelCity(document.getElementById("city"), e);
+    });</script>
 </body>
 </html>

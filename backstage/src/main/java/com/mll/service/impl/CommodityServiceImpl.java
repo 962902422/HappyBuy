@@ -24,4 +24,9 @@ public class CommodityServiceImpl implements CommodityService {
         commodityMapper.selAllCommodity();
         return page;
     }
+
+    @Override
+    public List<Details> sel() {
+        return commodityMapper.sel();
+    }
 }

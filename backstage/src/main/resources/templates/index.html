@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html><head>
+<html><head></head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>买来乐</title>
@@ -10,7 +10,6 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
     <link href="http://182.92.194.216:2202/PGPengStatic/layui/css/layui.css" rel="stylesheet" media="all">
-    </head>
     <script type="text/javascript" src="http://182.92.194.216:2202/PGPengStatic/js/jquery-1.8.3.min.js"></script>
 <script>
     function getDate() {
@@ -24,43 +23,32 @@ function twoDigits(val) {
     if (val < 10) return "0" + val; return val;
 }
 $(function () {
+    $('#tt').html('<iframe scrolling="auto" frameborder="0"  src="advertising.html" style="width:100%;height:623px;"></iframe>');
     setInterval(getDate, 1000);
 });
 </script>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
     <div class="layui-header">
-        <div class="layui-logo">买来乐 后台管理</div>
-        <!-- 头部区域（可配合layui已有的水平导航） -->
+        <div class="layui-logo"><a style="color: #F2F2F2" class="aa" src="advertising.html" href="javascript:void(0)">买来乐 后台管理</a></div>
         <ul class="layui-nav layui-layout-left">
             <li class="layui-nav-item"><span class="font_3" color="#ffffff" style="font-size: 24px;" face="黑体"></span></li>
         </ul>
         <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item">
-                <!--<a id="info" href="javascript:void(0)">-->
-                <a style="text-decoration: none;color: #FFFFFF" class="aa" src="userinfo.html" href="javascript:void(0)"><!--<img class="layui-nav-img" src="//tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg">-->
-                    管理员</a>
-                    <!--<span class="layui-nav-more"></span></a>-->
-                <!--<dl class="layui-nav-child layui-anim layui-anim-upbit">
-                    <dd><a href="">基本资料</a></dd>
-                    <dd><a href="">安全设置</a></dd>
-                </dl>-->
+                <a style="text-decoration: none;color: #FFFFFF" class="aa" src="userinfo.html" href="javascript:void(0)">个人资料</a>
             </li>
             <li class="layui-nav-item"><a href="/backstage/logout">退了</a></li>
             <span class="layui-nav-bar" style="left: 76px; top: 55px; width: 0px; opacity: 0;"></span></ul>
     </div>
-
     <div class="layui-side layui-bg-black">
         <div class="layui-side-scroll">
-            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
             <ul class="layui-nav layui-nav-tree" lay-filter="test" >
                 <li class="layui-nav-item layui-nav-itemed">
                     <a href="javascript:;">商品管理<span class="layui-nav-more"></span></a>
                     <dl class="layui-nav-child">
                         <dd><a class="aa" src="allcommodity.html" href="javascript:void(0)">所有商品</a></dd>
                         <dd><a class="aa" src="addcommodity.html" href="javascript:void(0)">新增商品</a></dd>
-                        <!--<dd><a class="aa" src="tree.html" href="javascript:void(0)">树页面</a></dd>
-                        <dd><a class="aa" src="datagrid2.html" href="javascript:void(0)">用户管理</a></dd>-->
                     </dl>
                 </li>
                 <li class="layui-nav-item">
@@ -69,30 +57,24 @@ $(function () {
                         <dd><a class="aa" src="allorder.html" href="javascript:void(0)">所有订单</a></dd>
                         <dd><a href="javascript:;">已完成</a></dd>
                         <dd><a href="javascript:;">待收货</a></dd>
-                        <dd><a href="javascript:;">发货中</a></dd>
-                        <dd><a href="javascript:;">待发货</a></dd>
+                        <dd><a class="aa" src="deliverorder.html" href="javascript:void(0)">待发货</a></dd>
                     </dl>
                 </li>
-                <li class="layui-nav-item"><a class="aa" src="alluserinfo.html" href="javascript:void(0)">基本资料</a></li>
-                <li class="layui-nav-item"><a class="aa" src="" href="javascript:void(0)">供货厂商</a></li>
+                <li class="layui-nav-item"><a class="aa" src="commoditytype.html " href="javascript:void(0)">商品分类</a></li>
+                <li class="layui-nav-item"><a class="aa" src="alluserinfo.html" href="javascript:void(0)">用户资料</a></li>
                 <span class="layui-nav-bar"></span></ul>
         </div>
     </div>
-
     <div class="layui-body">
-        <!-- 内容主体区域 -->
         <div id="tt" style="padding: 10px;">
-
         </div>
     </div>
     <div class="layui-footer">
-        <!-- 底部固定区域 -->
         Copyright MLL@stillloveyou.xyz
     </div>
 </div>
 <script src="http://182.92.194.216:2202/PGPengStatic/layui/layui.js" charset="utf-8"></script>
 <script>
-    //JavaScript代码区域
     layui.use('element', function(){
         var element = layui.element;
     });

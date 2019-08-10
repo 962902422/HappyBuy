@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="http://182.92.194.216:2202/PGPengStatic/layui/css/layui.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" type="text/css" href="http://182.92.194.216:2202/PGPengStatic/js/treetable-lay/treetable.css" media="all">
+    <script type="text/javascript" src="http://182.92.194.216:2202/PGPengStatic/js/jquery-1.8.3.min.js"></script>
+    <script src="http://182.92.194.216:2202/PGPengStatic/layui/layui.js" charset="utf-8"></script>
+</head>
+<body>
+<script>
+    $(function () {
+        $.post("/backstage/selByid",function (res) {
+            var option="";
+            $.each(res,function(i,data){
+                option="<option value='"+data.mpc_id+"'>"+data.mpc_name+"</option>";
+                $("#pid").append(option);
+            });
+        },"json");
+        $("#pid").change(function () {
+            if($("#pid").val()=="0"){
+                $("#pid2").attr("disabled",true);
+            }else{
+                $("#pid2").attr("disabled",false);
+                var pid=$("#pid").val();
+                $.post("/backstage/selBypid",{"pid":pid},function (res) {
+                    var option="";
+                    $("#pid2").empty();
+                    $("#pid2").append("<option value=\"0\">二级菜单</option>");
+                    $.each(res,function(i,data){
+                        option="<option value='"+data.mpc_id+"'>"+data.mpc_name+"</option>";
+                        $("#pid2").append(option);
+                    });
+                },"json");
+            }
+        })
+    });
+</script>
+<form action="/backstage/add">
+    <input style="width: 360px;height: 38px;border: 1px silver solid;margin: 20px;" type="tel" placeholder="请输入名称" name="name"  autocomplete="off" class="layui-input">
+    <select id="pid" name="pid" style="width: 360px;height: 38px;border: 1px silver solid;margin: 10px 20px;">
+        <option value="0">一级菜单</option>
+    </select>
+    <select disabled id="pid2" name="pid2" style="width: 360px;height: 38px;border: 1px silver solid;margin: 20px 20px;">
+    </select>
+    <button style="margin-top: 20px;margin-left: 315px;" type="submit" class="layui-btn">添加</button>
+</form>
+</body>
+</html>

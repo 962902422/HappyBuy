@@ -14,5 +14,8 @@ public interface CommodityMapper {
     @Select("SELECT * FROM `MLL`.`MLL_PRODUCT` ")
     List<Details> selAllCommodity();
 
-
+    @Select("SELECT * FROM `MLL`.`MLL_PRODUCT` " +
+            " ORDER BY `mp_buy_id` DESC " +
+            " LIMIT 0,5")
+    List<Details> sel();
 }

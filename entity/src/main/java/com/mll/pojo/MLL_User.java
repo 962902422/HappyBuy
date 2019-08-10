@@ -19,4 +19,9 @@ public class MLL_User implements Serializable {
     private String mu_email;
     private String mu_mobile;
     private String mu_status;
+    private String mr_name;
+    private String mr_mobile;
+    private String mr_address;
+    private String mr_detail_address;
+    private String mr_postal_code;
 }
