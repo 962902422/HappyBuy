@@ -1,6 +1,8 @@
 package com.mll.controller;
 
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageInfo;
 import com.mll.pojo.Details;
 import com.mll.pojo.MLL_PRODUCT_CATEGORY;
 import java.util.List;
@@ -48,5 +50,14 @@ public class ProductController {
     public List<Details> FireBuy(){
         return ps.FireBuy();
     }
+
+
+    @RequestMapping("/product/findbyid/{mpc_id}/{pageindex}")
+    //@RequestMapping("/product/findbyid/as/as")
+    @ResponseBody//
+    public PageInfo<Details> findById(@PathVariable("mpc_id") int mpc_id, @PathVariable("pageindex") Integer pageindex){
+
+        return ps.findByid(mpc_id,pageindex);
+    };
 
 }

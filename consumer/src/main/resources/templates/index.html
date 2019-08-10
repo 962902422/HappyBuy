@@ -65,10 +65,7 @@
 					<img src="http://182.92.194.216:2202/GodStatic/images/logo.png"/>
 				</div>
 				<!-------js两个手机的动画------->
-				<p>
-					<img src="http://182.92.194.216:2202/GodStatic/images/nav_phone1.png"/>
-					<img src="http://182.92.194.216:2202/GodStatic/images/nav_phone2.png"/>
-				</p>
+
 				<!-----nav--->
 				<ul>
 					<li><a href="">小米手机</a></li>
@@ -341,14 +338,14 @@
                             $.each(second,function(i,d){
 
 
-								var s = "<dl> <dt><h1>"+d.mpc_name+"</h1></dt>  ";
+								var s = "<dl> <dt><h1><a href='product/findbyid/"+d.mpc_id+"/0'>"+d.mpc_name+"</a></h1></dt>  ";
 								var third=d.childList;
 								var ss="</dl>";
 								//<dd><a href=''></a></dd>
 								var dd="";
 								$.each(third,function (i,d) {
 
-								    var a="<dd><a href=''>"+d.mpc_name+"</a></dd>";
+								    var a="<dd><a href='product/findbyid/"+d.mpc_id+"/0'>"+d.mpc_name+"</a></dd>";
 								    dd=dd+a;
                                 });
 
@@ -378,7 +375,7 @@
 
 						var li2="</li>";
 
-						var a="<a href=''><img style='width: 150px;height: 150px;padding: 20px;' src="+d.mp_image+"></a>";
+						var a="<a href='' ><img style='width: 150px;height: 150px;padding: 20px;' src="+'http://182.92.194.216:2202/PGStatic/image/'+d.mp_image+"></a>";
 
 						var h4="<h4><a href=''>"+d.mp_name+"</a></h4>";
 
@@ -404,7 +401,7 @@
 
 				    var hidden="<b hidden='hidden'>"+d.mp_id+"</b>";
 					var li="<li><div>新品</div>";
-					var a="<a href=''><img style='width: 156px;height: 133px;' src="+d.mp_image+"></a>";
+					var a="<a href=''><img style='width: 156px;height: 133px;' src="+'http://182.92.194.216:2202/PGStatic/image/'+d.mp_image+"></a>";
 					var h4="<h4><a href=''>"+d.mp_name+"</a></h4>";
 
 					var p="<p style='white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width: 210px;height: 20px;'>"+d.mp_descpiption+"</p>";
@@ -425,12 +422,12 @@
 				        $.each(json,function (i,d) {
 				var dl="<dl class='s4'>";
 				var b="<b hidden='hidden'>"+d.mp_id+"</b>";
-				var dt="<dt><a href=''><img src="+d.mp_image+"></a></dt>";
+				var dt="<dt><a href=''><img src="+'http://182.92.194.216:2202/PGStatic/image/'+d.mp_image+"></a></dt>";
 				var dd="<dd>";
 				var h4="<h4><a href=''>"+d.mp_name+"</a></h4>";
 				var p="<p style='white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width: 218px;height:20px;'>"+d.mp_descpiption+"</p>";
 				var dd1="</dd>";
-				var dd2="<dd class='Ltc'>"+d.mp_price+"</dd>";
+				var dd2="<dd class='Ltc'>&yen;"+d.mp_price+"</dd>";
 				var dl1="</dl>";
 
 					end=end+dl+b+dt+dd+h4+p+dd1+dd2+dl1;
@@ -467,6 +464,8 @@
             $(document).on("mouseout",'#category>ul li',function () {
                 $(this).find(".cate_right").css({"display":"none"});
             });
+
+
 
 
 		</script>

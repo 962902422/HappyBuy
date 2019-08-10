@@ -1,5 +1,8 @@
 package com.mll.service;
 
+
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageInfo;
 import com.mll.pojo.Details;
 import com.mll.pojo.MLL_PRODUCT_CATEGORY;
 import com.mll.pojo.MLL_User;
@@ -54,4 +57,9 @@ public interface MLLService {
 
     @RequestMapping("/product/firebuy")
     public List<Details> FireBuy();
+
+    @RequestMapping("/product/findbyid/{mpc_id}/{pgindex}")
+    public PageInfo<Details> findById(@PathVariable("mpc_id") int mpc_id, @PathVariable("pgindex") Integer pgindex);
+
+
 }

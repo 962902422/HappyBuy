@@ -12,7 +12,7 @@ import lombok.*;
 public class MLL_PRODUCT_CATEGORY implements Serializable {
 
 
-    private int mpc_id;//分类编号
+    private Integer mpc_id;//分类编号
 
     private String mpc_name;//分类名字
 

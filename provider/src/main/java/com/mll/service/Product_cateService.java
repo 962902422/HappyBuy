@@ -1,5 +1,7 @@
 package com.mll.service;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageInfo;
 import com.mll.pojo.Details;
 import com.mll.pojo.MLL_PRODUCT_CATEGORY;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,4 +21,9 @@ public interface Product_cateService {
 
 
     public List<Details> FireBuy();
+
+
+    public PageInfo<Details> findByid(int mpc_id, Integer pgindex);
+
+
 }
