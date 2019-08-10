@@ -17,6 +17,10 @@ mybatis:
     auto-mapping-behavior: full
     use-generated-keys: true
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+pagehelper:
+  helperDialect: mysql  #方言
+  reasonable: true      #启动合理化
+  pageSizeZero: true    #小于pageIndex1时，pageIndex=1
 
 spring:
   application:
@@ -34,7 +38,22 @@ spring:
       initial-size: 5
       max-total: 5
       max-wait-millis: 200
-
+  redis:
+    database: 2
+    #host: 127.0.0.1
+    host: 182.92.194.216
+    password: 123456
+    port: 6379
+    timeout: 60s
+    jedis:
+      pool:
+        max-idle: 50        # 最大空闲连接数
+        min-idle: 10        # 最小空闲连接数
+        max-wait:  -1s        # 等待可用连接的最大时间，负数为不限制
+        max-active: -1        # 最大活跃连接数，负数为不限制
+  data:
+    solr:
+      host: http://182.92.194.216:8983/solr
 eureka:
   client: #客户端注册进eureka服务列表内
     service-url:
@@ -46,19 +65,7 @@ eureka:
     prefer-ip-address: true     #访问路径可以显示IP地址
     leaseRenewalIntervalInSeconds: 10   #租期更新时间间隔（默认30秒）
     leaseExpirationDurationInSeconds: 30 #租期到期时间（默认90秒）
-#  redis:
-#    database: 2
-#    #host: 127.0.0.1
-#    host: 182.92.194.216
-#    password: 123456
-#    port: 6379
-#    timeout: 60s
-#    jedis:
-#      pool:
-#        max-idle: 50        # 最大空闲连接数
-#        min-idle: 10        # 最小空闲连接数
-#        max-wait:  -1s        # 等待可用连接的最大时间，负数为不限制
-#        max-active: -1        # 最大活跃连接数，负数为不限制
+
 info:
   app.name: mll-microservice
   company.name: www.mll.com

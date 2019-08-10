@@ -4,6 +4,7 @@ import com.mll.pojo.Details;
 import com.mll.pojo.MLL_PRODUCT_CATEGORY;
 import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 
 public interface Product_cateMapper {
@@ -21,4 +22,12 @@ public interface Product_cateMapper {
     //热销产品
 
     public List<Details> FireBuy();
+
+    //根据mpc_id来查询分类的商品
+
+    public List<Details> findByid(@Param("mpc_id") int mpc_id);
+
+
+
+
 }

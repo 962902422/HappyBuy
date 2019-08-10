@@ -1,6 +1,8 @@
 server:
   port: 81
 
+
+
 spring:
   thymeleaf:
     encoding: UTF-8
@@ -14,6 +16,32 @@ spring:
       static-locations: classpath:/templates/,classpath:/META-NF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/
   application:
     name: mll-consumer
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://182.92.194.216:3306/MLL
+    #jdbc:mysql:///test
+    username: root
+    password: root
+    dbcp2:
+      min-idle: 5
+      initial-size: 5
+      max-total: 5
+      max-wait-millis: 200
+  data:
+    solr:
+      host: http://182.92.194.216:8983/solr
+mybatis:
+  type-aliases-package: com.mll.pojo
+  configuration:
+    auto-mapping-behavior: full
+    use-generated-keys: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+pagehelper:
+  helperDialect: mysql  #方言
+  reasonable: true      #启动合理化
+  pageSizeZero: true    #小于pageIndex1时，pageIndex=1
+
 
 eureka:
   client:
